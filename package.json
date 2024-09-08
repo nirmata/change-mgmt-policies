@@ -1,0 +1,11 @@
+{
+  "name": "cdk-scan-demo",
+  "version": "1.0.0",
+  "description": "This is a demo repository to scan CloudFormation templates. The scanned results can be viewed via the Nirmata Policy Manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

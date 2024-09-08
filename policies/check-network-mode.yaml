@@ -6,7 +6,7 @@ metadata:
     app: kyverno
   annotations:
     policies.kyverno.io/title: Validate if ECS Containers only have read-only access to its root filesystem
-    policies.kyverno.io/category: ECS Best Practices
+    policies.kyverno.io/category: CDK Best Practices for ECS
     policies.kyverno.io/severity: medium
     policies.kyverno.io/description: >-
       When managing containers within AWS ECS, it's crucial to enforce security measures to prevent unauthorized modifications. 
