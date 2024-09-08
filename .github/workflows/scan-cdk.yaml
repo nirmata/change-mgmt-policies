@@ -13,7 +13,7 @@ env:
   NIRMATA_URL: ${{ secrets.NIRMATA_URL }}
 
 jobs:
-  NCTL-Scan-Repository:
+  NCTL-Scan-CDK:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
