@@ -1,7 +1,7 @@
 apiVersion: json.kyverno.io/v1alpha1
 kind: ValidatingPolicy
 metadata:
-  name: validate-ecs-containers-readonly
+  name: validate-network-mode
   labels: 
     app: kyverno
   annotations:
@@ -14,7 +14,7 @@ metadata:
       This policy checks if ECS Containers have read-only access to its root filesystem.
 spec:
   rules:
-    - name: validate-ecs-containers-readonly
+    - name: validate-network-mode
       match:
         all:
         - (values(Resources)[?Type == 'AWS::ECS::TaskDefinition'] | length(@) > `0`): true
