@@ -61,8 +61,8 @@ jobs:
         run: nctl login --url $NIRMATA_URL --userid anusha.hegde@nirmata.com --token $NIRMATA_TOKEN
         
         
-      - name: NCTL Scan Repository
+      - name: NCTL Scan Repository for CDK
         run: |
-          nctl scan repository --policies policies/
+          nctl scan json sample-cdk/cdk.out/MyEcsStack.template.json --policies policies/
   
       - run: echo "🍏 This job's status is ${{ job.status }}."
