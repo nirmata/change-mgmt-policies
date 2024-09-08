@@ -1,0 +1,61 @@
+name: CDK Scan Pipeline Demo
+run-name: ${{ github.actor }} has triggered Scan Action 🚀
+on:
+  pull_request:
+    branches:
+      - "main"
+  push:
+    branches:
+      - "main"
+
+env:
+  NIRMATA_TOKEN: ${{ secrets.NIRMATA_TOKEN }}
+  NIRMATA_URL: ${{ secrets.NIRMATA_URL }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+
+
+jobs:
+  NCTL-Scan-Repository:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Check out main repository code
+        uses: actions/checkout@v4
+
+      - name: NCTL-scan-installer
+        uses: supplypike/setup-bin@v4
+        with:
+          uri: 'https://nirmata-downloads.s3.us-east-2.amazonaws.com/nctl/nctl_4.2.2-rc.1/nctl_4.2.2-rc.1_linux_386.zip'
+          name: 'nctl'
+          version: '4.2.2-rc.1'
+
+      - name: Check nctl version
+        run: |
+          nctl version
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Specify the Node.js version you want to use
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install AWS CDK
+        run: npm install -g aws-cdk
+
+      - name: CDK Synth
+        run: cdk synth --json
+
+      # - name: nctl login
+      #   run: nctl login --url $NIRMATA_URL --userid anusha.hegde@nirmata.com --token $NIRMATA_TOKEN
+        
+        
+      - name: NCTL Scan Repository
+        run: |
+          nctl scan repository --policies policies/
+  
+      - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -1,0 +1,1 @@
+This is a demo repository to scan CloudFormation templates. The scanned results can be viewed via the Nirmata Policy Manager.
