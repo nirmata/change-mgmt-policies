@@ -18,16 +18,6 @@ class MyEcsStack(Stack):
             memory_mib="512"
         )
 
-        # Add an execution role (required for Fargate tasks)
-        execution_role = iam.Role(
-            self, "TaskExecutionRole",
-            assumed_by=iam.ServicePrincipal("ecs-tasks.amazonaws.com"),
-            managed_policies=[
-                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AmazonECSTaskExecutionRolePolicy")
-            ]
-        )
-        task_definition.execution_role = execution_role
-
         # Add a container to the task definition
         container = task_definition.add_container(
             "MyContainer",
