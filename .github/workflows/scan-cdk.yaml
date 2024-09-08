@@ -63,6 +63,6 @@ jobs:
         
       - name: NCTL Scan Repository for CDK
         run: |
-          nctl scan json -r sample-cdk/cdk.out/MyEcsStack.template.json --policies policies/
+          nctl scan json -r sample-cdk/cdk.out/MyEcsStack.template.json --policies policies/ --publish
   
       - run: echo "🍏 This job's status is ${{ job.status }}."
