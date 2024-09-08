@@ -50,8 +50,8 @@ jobs:
       - name: CDK Synth
         run: cdk synth --json
 
-      # - name: nctl login
-      #   run: nctl login --url $NIRMATA_URL --userid anusha.hegde@nirmata.com --token $NIRMATA_TOKEN
+      - name: nctl login
+        run: nctl login --url $NIRMATA_URL --userid anusha.hegde@nirmata.com --token $NIRMATA_TOKEN
         
         
       - name: NCTL Scan Repository
