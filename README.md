@@ -1,4 +1,4 @@
-## Scanning CloudFormation templates for misconfugurations
+## Scanning CloudFormation templates for misconfigurations
 
 This is a demo repository to scan [CloudFormation]([url](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)) templates. The scanned results can be viewed via the [Nirmata Policy Manager (NPM)]([url](https://nirmata.com/policy-manager/)).
 
