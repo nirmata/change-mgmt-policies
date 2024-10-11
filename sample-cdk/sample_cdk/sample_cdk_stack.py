@@ -10,7 +10,7 @@ class MyEcsStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        # Create a Fargate Task Definition
+        # Create a Fargate Task Definition for testing
         task_definition = ecs.TaskDefinition(
             self, "MyECSTaskDefinition",
             compatibility=ecs.Compatibility.FARGATE,
