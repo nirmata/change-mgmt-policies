@@ -25,7 +25,7 @@ class MyEcsStack(Stack):
             logging=ecs.LogDriver.aws_logs(stream_prefix="MyApp")
         )
 
-        # Optionally, add port mappings
+        # Optionally, add port mappings now
         container.add_port_mappings(
             ecs.PortMapping(
                 container_port=80
