@@ -1,6 +1,6 @@
 ## Scanning CloudFormation templates for misconfigurations
 
-This is a demo repository to scan [CloudFormation]([url](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)) templates. The scanned results can be viewed via the [Nirmata Policy Manager (NPM)]([url](https://nirmata.com/policy-manager/)).
+This is a demo repository to scan the [CloudFormation]([url](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)) templates. The scanned results can be viewed via the [Nirmata Policy Manager (NPM)]([url](https://nirmata.com/policy-manager/)).
 
 The GitHub Action converts the CDK file into a CloudFormation template using the `cdk synth` command.
 ```
