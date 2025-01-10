@@ -54,6 +54,7 @@ jobs:
 
       - name: CDK Synth
         run: |
+          git clone https://github.com/nirmata/cdk-code.git
           cd sample-cdk
           cdk synth --json
 
