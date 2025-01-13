@@ -19,7 +19,7 @@ spec:
         - (values(Resources)[?Type == 'AWS::ECS::TaskDefinition'] | length(@) > `0`): true
       assert:
         all:
-        - message: ECS Containers should have read-only access to its root filesystem
+        - message: ECS Containers should only be deployed in us-west-1 region.
           check:
             ~.(values(Resources)[?Type == 'AWS::ECS::TaskDefinition']):
                 Properties:
