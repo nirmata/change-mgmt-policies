@@ -1,4 +1,4 @@
-name: CDK Scan Pipeline Demo
+name: CDK Regional Scan Pipeline Demo
 run-name: ${{ github.actor }} has triggered Scan Action 🚀
 on:
   pull_request:
