@@ -16,4 +16,4 @@ spec:
         all:
          - message : "Resource creation is only allowed between January 1 and January 31, 2025 due to change freeze"
            check: 
-             (time_between(time_now_utc(),'2025-01-01T00:00:00Z','2025-01-31T23:59:59Z')) : false
+             (time_between(time_now_utc(),'2025-01-01T00:00:00Z','2025-01-31T23:59:59Z')) : true
