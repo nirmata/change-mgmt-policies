@@ -6,6 +6,7 @@ metadata:
     app: kyverno
   annotations:
     policies.kyverno.io/severity: medium
+    policies.kyverno.io/category: Change Freeze violation
 spec:
   rules:
     - name: validate-time-bound-creation
